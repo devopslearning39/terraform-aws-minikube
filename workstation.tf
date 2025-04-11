@@ -8,7 +8,7 @@ module "ec2_instance" {
 #   monitoring             = true
   vpc_security_group_ids = [aws_security_group.allow_minikube.id]
   subnet_id              = "subnet-058a7562114623eda"
-
+  user_data = file("docker.sh")
   tags = {
     Terraform   = "true"
     Environment = "dev"
