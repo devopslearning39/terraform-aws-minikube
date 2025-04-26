@@ -2,7 +2,8 @@ module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
   name = "workstation"
-  ami = data.aws_ami.Centos8.id
+# ami = data.aws_ami.centos8.id
+    ami = "ami-0b4f379183e5706b9"
   instance_type          = "t2.micro"
 #   key_name               = "user1"
 #   monitoring             = true
@@ -38,22 +39,22 @@ resource "aws_security_group" "allow_minikube" {
   }
 }
 
-data "aws_ami" "Centos8" {
-  most_recent      = true
-  owners           = ["692859912310"]
+# data "aws_ami" "centos8" {
+#   most_recent      = true
+#   owners           = ["692859912310"]
 
-  filter {
-    name   = "name"
-    values = ["Centos-8-DevOps-Practice"]
-  }
+#   filter {
+#     name   = "name"
+#     values = ["Centos-8-DevOps-Practice"]
+#   }
 
-  filter {
-    name   = "root-device-type"
-    values = ["ebs"]
-  }
+#   filter {
+#     name   = "root-device-type"
+#     values = ["ebs"]
+#   }
 
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-}
+#   filter {
+#     name   = "virtualization-type"
+#     values = ["hvm"]
+#   }
+# }

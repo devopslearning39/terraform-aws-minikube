@@ -4,7 +4,8 @@ module "minikube" {
   aws_region    = "us-east-1"
   cluster_name  = "roboshop"
   aws_instance_type = "t3.medium"
-  ssh_public_key = "~/.ssh/praveen.pub"
+  # ssh_public_key = "~/.ssh/praveen.pub"
+  ssh_public_key = "/Users/praveenjella/Documents/DEPLOYMENTS/Jella/Aws_Practice/praveen.pub"
   aws_subnet_id = "subnet-058a7562114623eda" #replace your default subnet id
   # by default centos7 will be used
   #ami_image_id = "ami-b81dbfc5"
